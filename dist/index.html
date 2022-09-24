@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>To Do List</title>
+    <script defer src="bundle.df679428db9e2035c03d.js"></script></head>
+    <body>
+        <div id="content">
+            <h1 class="main-title">Stuff I need to do</h1>
+
+            <div class="projects-container">
+                <h1 class="projects-title title">Projects</h1>
+                <ul class="projects-list"  data-projects-list>
+                    <li class="project-item active">Inbox</li>
+                    <li class="project-item">Today</li>
+                </ul>
+                <form class="add-todo-form add" data-project-form action="#">
+                    <input class="new project" type="text" placeholder="New Project Name" maxlength="38" data-project-name-input required />
+                    <button type="submit" >+</button>
+                </form>
+            </div>
+
+            <div class="tasks-display-container" data-tasks-display-container>
+                <div class="body">
+                <header data-tasks-header-container>
+                    <h1 class="tasks-title title" type="text" contenteditable="true" data-taks-title >Go Jim</h1>
+                    <div class="tasks-count" data-tasks-count>_ tasks remaining</div>
+                </header>
+                <div class="tasks-container" data-tasks-container>
+
+                    <div class="task">
+                        <div class="task-main-body">
+                            <input type="checkbox" name="task" id="task1">
+                            <label contenteditable="true">
+                            Dumbbell Press 4x10
+                            </label>
+
+                            <svg class="start-svg" data-info-button style="width:20.5px;height:20.5px" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z" />
+                            </svg>
+
+                            <svg class="not-start-svg" data-flag-button style="width:21px;height:21px" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M6,3A1,1 0 0,1 7,4V4.88C8.06,4.44 9.5,4 11,4C14,4 14,6 16,6C19,6 20,4 20,4V12C20,12 19,14 16,14C13,14 13,12 11,12C8,12 7,14 7,14V21H5V4A1,1 0 0,1 6,3Z" />
+                            </svg>
+
+                            <svg class="not-start-svg"  data-delete-button style="width:21px;height:21px" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z" />
+                            </svg>
+
+                        </div>
+                        <div class="task-details">
+                            <div class="task-title">
+                                <span class="semi-bold" >Title:</span>
+                            </div>
+                            <div class="task-description">
+                                <span class="semi-bold" >Description:</span>
+                            </div>
+                            <div class="task-due-date">
+                                <span class="semi-bold">Due date:</span>
+                            </div>
+                            <div class="task-priority">
+                                <span class="semi-bold">Priority:</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="add-new-task" data-open-modal-button data-add-task-button >Add Task</button>
+                </div>
+                <div class="delete-button-container">
+                    <button class="clear-completed-tasks" data-clear-completed>Clear Completed Tasks</button>
+                    <button class="delete-list" data-delete-task-list>Delete List</button>
+                </div>
+            </div>
+        </div>
+        <!-- MODAL --------------------------- -->
+        <div class="modal-backdrop" data-modal-trigger></div>
+        <div class="modal">
+            <header class="modal-buttons">
+                <button id="modal-close-button" data-close-modal-button>
+                    <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
+                        <path
+                            fill="currentColor"
+                            d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"
+                        />
+                    </svg>
+                </button>
+                <input type="submit" form="modal-form" id="modal-save-button" value="Save" />
+            </header>
+
+            <form id="modal-form" class="modal-body" action="#" data-task-submit-form>
+                <input type="text" name="new-task-title" id="new-task-title" placeholder="Add Title" autofocus required />
+                <textarea
+                    name="new-task-description"
+                    id="new-task-description"
+                    cols="10"
+                    rows="5"
+                    placeholder="Add details"
+                ></textarea>
+                <input type="date" name="new-task-duedate" id="new-task-duedate" placeholder="Due date" data-task-due-date />
+                <select name="new-task-priority" id="new-task-priority" required>
+                    <option value="" disabled selected hidden>Choose priority</option>
+                    <option value="low-priority">Low</option>
+                    <option value="medium-priority">Medium</option>
+                    <option value="high-priority">High</option>
+                </select>
+                <select name="new-task-project" id="new-task-project" required>
+                    <option value="proj">current project</option>
+                </select>
+            </form>
+        </div>
+    </body>
+    
+</html>
+
+<!-- ****************************************************************************** -->
+<template>
+    <div class="task">
+                        <div class="task-main-body">
+                            <input type="checkbox" name="task" id="task1">
+                            <label contenteditable="true">
+                            Dumbbell Press 4x10
+                            </label>
+
+                            <svg class="start-svg" data-info-button style="width:21px;height:21px" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z" />
+</svg>
+
+<svg class="not-start-svg" data-flag-button style="width:21px;height:21px" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M6,3A1,1 0 0,1 7,4V4.88C8.06,4.44 9.5,4 11,4C14,4 14,6 16,6C19,6 20,4 20,4V12C20,12 19,14 16,14C13,14 13,12 11,12C8,12 7,14 7,14V21H5V4A1,1 0 0,1 6,3Z" />
+</svg>
+
+<svg class="not-start-svg"  data-delete-button style="width:21px;height:21px" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z" />
+</svg>
+                        </div>
+                        <div class="task-details">
+                            <div class="task-title">
+                                <span class="semi-bold" >Title:</span>
+                            </div>
+                            <div class="task-description">
+                                <span class="semi-bold" >Description:</span>
+                            </div>
+                            <div class="task-due-date">
+                                <span class="semi-bold">Due date:</span>
+                            </div>
+                            <div class="task-priority">
+                                <span class="semi-bold">Priority:</span>
+                            </div>
+                        </div>
+                    </div>
+</template>
+
+<template>
+    <li class="project-item">Today</li>
+</template>
