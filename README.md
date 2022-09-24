@@ -25,5 +25,5 @@ This project was the most difficult by far. The one lesson that was way more imp
 npm run build
 ```
 
-![to-do-list-preview]https://user-images.githubusercontent.com/104041730/192098660-98dcaca8-c984-4c2c-ae07-26a34ccb89d3.png "App Preview")
+![to-do-list-preview](https://user-images.githubusercontent.com/104041730/192098660-98dcaca8-c984-4c2c-ae07-26a34ccb89d3.png "App Preview")
 
